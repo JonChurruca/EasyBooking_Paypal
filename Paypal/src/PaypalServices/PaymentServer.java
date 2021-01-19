@@ -25,12 +25,13 @@ public class PaymentServer extends UnicastRemoteObject implements IPaymentServer
 	
 	@Override
 	public Integer proceedPayment(String userEmail) {
-		
+	
+		paymentID += 1; 
 		
 		if (paypalUsers.equals(userEmail)) {
 			return paymentID;
 		}
-		return null;
+		return paymentID;
 	}
 	
 	
